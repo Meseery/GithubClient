@@ -37,13 +37,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please enter GitHub username below." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6VJ-wQ-22a">
-                                <rect key="frame" x="66" y="182" width="242" height="17"/>
+                                <rect key="frame" x="66" y="226" width="242" height="17"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="GitHub Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ekI-S1-nGG">
-                                <rect key="frame" x="20" y="219" width="335" height="40"/>
+                                <rect key="frame" x="20" y="263" width="335" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="W3p-BY-oyF"/>
                                 </constraints>
@@ -51,14 +51,14 @@
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                             </textField>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Git" translatesAutoresizingMaskIntoConstraints="NO" id="WFI-0i-Ure">
-                                <rect key="frame" x="67" y="72" width="240" height="100"/>
+                                <rect key="frame" x="67" y="116" width="240" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="PxA-jL-73h"/>
                                     <constraint firstAttribute="width" constant="240" id="zhW-km-jSN"/>
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oMW-0m-bk5">
-                                <rect key="frame" x="106" y="283" width="163" height="35"/>
+                                <rect key="frame" x="106" y="327" width="163" height="35"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="163" id="jb7-gS-xLc"/>
@@ -87,7 +87,6 @@
                         <viewLayoutGuide key="safeArea" id="APh-sJ-cS8"/>
                     </view>
                     <navigationItem key="navigationItem" id="jXg-eN-94v"/>
-                    <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="_usernameTextField" destination="ekI-S1-nGG" id="03v-GK-ljv"/>
                     </connections>

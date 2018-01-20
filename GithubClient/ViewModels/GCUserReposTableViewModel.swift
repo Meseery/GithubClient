@@ -16,9 +16,12 @@ class GCUserReposTableViewModel: NSObject {
     
     var username : String
     var userRepos : [GCUserRepo] = []
-    let itemsPerBatch = 50
-    var offset = 0
-    var reachedEndOfItems = false
+    let itemsPerBatch = 15
+    var offset = 1
+    var reachedEndOfItems : Bool{
+        return userRepos.count == 100 // Assumption 
+    }
+    var isLoadingList : Bool = false
     
     private var dataProvider = _GCDataProvider()
     
@@ -28,28 +31,38 @@ class GCUserReposTableViewModel: NSObject {
     }
     
     func loadRepos(onCompletion: @escaping ()-> Void) -> Resource  {
+        self.isLoadingList = true
         return dataProvider.fetchUserRepos(withUsername: username,
                                            page: offset,
                                            count: itemsPerBatch)
         {[weak self] (userRepos) in
+            self?.isLoadingList = false
             self?.userRepos.append(contentsOf: userRepos)
             onCompletion()
         }
     }
     
+    func persistCurrentData()  {
+        let currentRepos = self.userRepos
+        dataProvider.cacheRepos(forUser: username, repos: currentRepos)
+    }
+    
+    func nextBatch(){
+        offset += 1
+    }
     
     func numberOfRows() -> Int {
         return self.userRepos.count
     }
     
     func heightOfRow(atIndexPath indexPath:IndexPath) -> CGFloat {
-        return 100.0
+        return CGFloat(rowHeight)
     }
     
     func cellForRow(_ tableView:UITableView, atIndexPath indexPath:IndexPath) -> UITableViewCell {
         let repoCellViewModel = GCUserRepoViewModel(userRepo: userRepos[indexPath.row])
         
-        return repoCellViewModel.cellInstance(tableView: tableView,
+        return repoCellViewModel.cellInstance(tableView,
                                               indexPath: indexPath)
     }
     

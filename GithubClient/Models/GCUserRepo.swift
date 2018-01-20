@@ -8,7 +8,7 @@
 
 import SwiftyJSON
 
-class GCUserRepo{
+class GCUserRepo:Codable{
     
     var name: String?
     var fullName: String?
@@ -19,6 +19,17 @@ class GCUserRepo{
     var message : String?
     var fork: Bool?
 
+    enum CodingKeys : String, CodingKey {
+        case name
+        case fullName
+        case privateRepo
+        case createdAt
+        case forksCount
+        case openIssuesCount
+        case message
+        case fork
+    }
+    
     init(json: JSON) throws {
         name = json["name"].string
         fullName = json["full_name"].string

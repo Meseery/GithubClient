@@ -37,10 +37,9 @@ class GCUserRepoViewModel: CellRepresentable {
         self.repo = userRepo
     }
     
-    func cellInstance(tableView: UITableView, indexPath: IndexPath) -> UITableViewCell {
+    func cellInstance(_ tableView: UITableView, indexPath: IndexPath) -> UITableViewCell {
         // Dequeue a cell
-        let cell = tableView.dequeueReusableCell(withIdentifier: GCRepoCell.identifier) as! GCRepoCell
-        
+        let cell = tableView.dequeueReusableCell(withIdentifier: GCRepoCell.identifier, for: indexPath) as! GCRepoCell
         // Pass ourselves (the view model) to setup the cell
         cell.configureCell(withViewModel: self)
         

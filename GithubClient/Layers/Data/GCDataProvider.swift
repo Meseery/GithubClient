@@ -11,13 +11,17 @@ import SwiftyJSON
 
 class _GCDataProvider : NSObject {
     
-    // MARK: - Initial Setup
     private var apiService : _APIService
+    private let persistantRepoStore : GCPersistantStore<[GCUserRepo]> = GCPersistantStore(storageType: .cache)
     
     override init() {
         apiService = _APIService(baseURL: APIEndpoint.baseUrl.rawValue)
         super.init()
         configService()
+    }
+    
+    func cacheRepos(forUser username:String, repos:[GCUserRepo])  {
+        persistantRepoStore.save(repos, toFile: username)
     }
     
     func configService()  {
@@ -34,6 +38,12 @@ class _GCDataProvider : NSObject {
                         page:Int,
                         count:Int,
                         onSuccess:@escaping ([GCUserRepo])->Void) -> Resource {
+            // Check if ther's a cached version of resource
+                // if yse, return it back
+        if let repos = persistantRepoStore.restoreValue(fromFile: username) {
+            onSuccess(repos)
+        }
+        
         let resource = apiService.userRepos
             .child(username)
             .child("/repos")
@@ -46,6 +56,7 @@ class _GCDataProvider : NSObject {
         }
         return resource
     }
+    
     
     
 }
