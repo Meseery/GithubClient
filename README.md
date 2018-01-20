@@ -1,2 +1,2 @@
 # GithubClient
-Simple Github Cleint to show user public repositories. 
+Simple Github Client to show user public repositories. 
