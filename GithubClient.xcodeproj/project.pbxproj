@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		A206E9EF2012C7D5000E1E84 /* UIViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A206E9EE2012C7D4000E1E84 /* UIViewControllerExtensions.swift */; };
 		A206E9F1201397F4000E1E84 /* GCPersistantStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A206E9F0201397F4000E1E84 /* GCPersistantStore.swift */; };
+		A206E9F32013DAF7000E1E84 /* UITableViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A206E9F22013DAF7000E1E84 /* UITableViewExtensions.swift */; };
 		A22A9590201156D900821399 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A22A958F201156D900821399 /* AppDelegate.swift */; };
 		A22A9595201156D900821399 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A22A9593201156D900821399 /* Main.storyboard */; };
 		A22A9597201156D900821399 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A22A9596201156D900821399 /* Assets.xcassets */; };
@@ -58,6 +59,7 @@
 /* Begin PBXFileReference section */
 		A206E9EE2012C7D4000E1E84 /* UIViewControllerExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtensions.swift; sourceTree = "<group>"; };
 		A206E9F0201397F4000E1E84 /* GCPersistantStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GCPersistantStore.swift; sourceTree = "<group>"; };
+		A206E9F22013DAF7000E1E84 /* UITableViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewExtensions.swift; sourceTree = "<group>"; };
 		A22A958C201156D900821399 /* GithubClient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GithubClient.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A22A958F201156D900821399 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A22A9594201156D900821399 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -260,6 +262,7 @@
 				A2FE139E20128B1B00E5B51F /* DateExtensions.swift */,
 				A2FE13A62012A03A00E5B51F /* ResourceUIExtensions.swift */,
 				A206E9EE2012C7D4000E1E84 /* UIViewControllerExtensions.swift */,
+				A206E9F22013DAF7000E1E84 /* UITableViewExtensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -511,6 +514,7 @@
 				A206E9EF2012C7D5000E1E84 /* UIViewControllerExtensions.swift in Sources */,
 				A2FE13A520129D0A00E5B51F /* GCUserReposTableViewModel.swift in Sources */,
 				A2FE1385201239E300E5B51F /* GCReposViewController.swift in Sources */,
+				A206E9F32013DAF7000E1E84 /* UITableViewExtensions.swift in Sources */,
 				A2FE137D2012276B00E5B51F /* APIService.swift in Sources */,
 				A206E9F1201397F4000E1E84 /* GCPersistantStore.swift in Sources */,
 				A2FE138920123C6900E5B51F /* GCDataProvider.swift in Sources */,

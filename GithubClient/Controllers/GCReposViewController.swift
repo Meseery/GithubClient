@@ -12,7 +12,12 @@ import Siesta
 class GCReposViewController: UIViewController {
     
     // MARK: - IBOutlets
-    @IBOutlet weak var _reposTableView: UITableView!
+    @IBOutlet weak var _reposTableView: UITableView! {
+        didSet{
+            _reposTableView.tableFooterView = UIView()
+            
+        }
+    }
     @IBOutlet weak var _activityIndicatorView: UIActivityIndicatorView!
     
     // MARK: - iVars
@@ -23,7 +28,6 @@ class GCReposViewController: UIViewController {
             _reposTableView.delegate = self
         }
     }
-
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,18 +36,22 @@ class GCReposViewController: UIViewController {
 
     
     func setup()  {
-        self.addBackButton(withImage: #imageLiteral(resourceName: "back"))
-        self.addRightNavigationButton(title: "Save", action: #selector(save))
-        self.navigationItem.title = userName
-        _reposTableView.tableFooterView = UIView()
+        setupNavigationBar()
         guard let username = userName else {
             AlertView.showAlert(WithMessage: "No such user")
             return
         }
         reposTableViewModel = GCUserReposTableViewModel(username: username)
         reposTableViewModel?.loadRepos {[weak self] in
+            self?._reposTableView.setEmptyMessage("No Repos Found")
             self?._reposTableView.reloadData()
         }.addObserver(_activityIndicatorView)
+    }
+    
+    func setupNavigationBar() {
+        self.navigationItem.title = userName
+        self.addBackButton(withImage: #imageLiteral(resourceName: "back"))
+        self.addRightNavigationButton(title: "Save", action: #selector(save))
     }
     
     @objc func save()  {

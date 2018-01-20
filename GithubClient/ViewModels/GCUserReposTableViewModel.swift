@@ -19,7 +19,7 @@ class GCUserReposTableViewModel: NSObject {
     let itemsPerBatch = 15
     var offset = 1
     var reachedEndOfItems : Bool{
-        return userRepos.count == 100 // Assumption 
+        return userRepos.count == 50 // Assumption 
     }
     var isLoadingList : Bool = false
     
